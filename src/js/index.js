@@ -47,12 +47,16 @@ const initForm = () => {
   if (state.survey.retriveData("targetsData")) {
     state.survey.results.targetsData = state.survey.retriveData("targetsData");
     //Calculate and print the car average
-    let carsAverage = state.survey.calcAverage(
-      state.survey.results.targetsData.bmwsOwned,
-      state.survey.results.groups.targets
-    );
-    elements.header.innerHTML = `On average survey partacipans owned ${carsAverage} cars.`;
   }
+
+  let carsAverage = state.survey.calcAverage(
+    state.survey.results.targetsData.bmwsOwned,
+    state.survey.results.groups.targets
+  );
+  if (isNaN(carsAverage)) {
+    carsAverage = 0;
+  }
+  elements.header.innerHTML = `On average survey partacipans owned ${carsAverage} cars.`;
 
   //Init the charts
   state.chart();
