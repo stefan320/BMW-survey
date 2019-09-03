@@ -45,12 +45,6 @@ export const chart = results => {
           bottom: 10
         }
       },
-      title: {
-        display: true,
-        text: "Results",
-        fontSize: 22,
-        fontWeight: 400
-      },
       tooltips: {
         callbacks: {
           title: function(tooltipItem, data) {
@@ -108,12 +102,6 @@ export const barChart = results => {
         }
       },
       legend: false,
-      title: {
-        display: true,
-        text: "Targetables Percentages",
-        fontSize: 22,
-        fontWeight: 400
-      },
       scales: {
         yAxes: [
           {
@@ -147,8 +135,7 @@ export const horizontalChart = results => {
       datasets: [
         {
           data: Object.values(results.modelsOwned),
-          backgroundColor: "rgba(129, 196, 255, 0.6)",
-          borderColor: "#e7222e"
+          backgroundColor: "rgba(129, 196, 255, 0.6)"
         }
       ]
     },
@@ -162,12 +149,6 @@ export const horizontalChart = results => {
         }
       },
       legend: false,
-      title: {
-        display: true,
-        text: "Model distribution of all BMW models entered",
-        fontSize: 22,
-        fontWeight: 400
-      },
       scales: {
         yAxes: [
           {

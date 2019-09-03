@@ -10,7 +10,7 @@ export const elements = {
   formErrors: document.querySelector(".form__errors"),
   formState: document.querySelector(".form__state"),
   formAlert: document.querySelector(".form--alert"),
-  loader: document.querySelector(".loader"),
+  // loader: document.querySelector(".loader"),
   popup: document.querySelector(".popup"),
   popupMsg: document.querySelector(".popup--msg"),
   popupClose: document.querySelector(".popup--close")

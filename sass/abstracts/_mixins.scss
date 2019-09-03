@@ -10,3 +10,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin respond-tab {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin respond-desktop {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}

@@ -1,3 +1,47 @@
 .results {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: $color-gray;
+  text-align: center;
+  margin: 1rem auto;
+  background-color: $color-secondary;
+  padding: 2rem 0;
+
+  @include respond-tab {
+    margin: 2.5rem auto;
+    font-size: 2rem;
+    padding: 2.5rem 0;
+  }
+
+  @include respond-desktop {
+    margin: 4.5rem auto;
+    font-size: 2.2rem;
+    font-weight: 700;
+    padding: 3rem 0;
+  }
+
+  &:last-child {
+    margin: 1rem auto 0;
+    @include respond-tab {
+      margin: 2.5rem auto 0;
+    }
+    @include respond-desktop {
+      margin: 4.5rem auto 0;
+    }
+  }
+
+  &--first {
+    margin: 0 auto 1rem;
+    @include respond-tab {
+      margin: 0 auto 2.5rem;
+    }
+    @include respond-desktop {
+      margin: 4.5rem auto;
+    }
+  }
+
+  &--titles {
+    padding: 0 2rem;
+    font-weight: 400;
+  }
 }

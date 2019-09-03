@@ -20,11 +20,16 @@
     color: $color-white;
     display: block;
     width: 65%;
-    height: 3.4rem;
+    padding: 1.2rem 0;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.4rem;
     border: 1px solid $color-white;
-    outline: 1px solid $color-gray;
+    outline: 1px solid transparent;
+    border-radius: 8px;
+
+    @include respond-tab {
+      width: 40%;
+      padding: 1.5rem 0;
+    }
   }
 }
