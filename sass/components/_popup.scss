@@ -1,0 +1,24 @@
+.popup {
+  @include absCenter;
+  background-color: $color-background;
+  display: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  color: $color-white;
+
+  &--close {
+    float: right;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+
+  &--msg {
+    @include absCenter;
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+}

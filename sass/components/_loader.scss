@@ -1,0 +1,21 @@
+.loader {
+  @include absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  &--animation {
+    @include absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: scale 1.1s infinite;
+    background-image: linear-gradient(
+      to right,
+      $badge-color-primary 0%,
+      $badge-color-secondary 28%,
+      $badge-color-tertiary 84%
+    );
+  }
+}

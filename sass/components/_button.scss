@@ -1,0 +1,16 @@
+.btn,
+&:target,
+&:active {
+  display: inline-block;
+  margin: 3rem auto;
+  background-color: $color-secondary;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 6px;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+}

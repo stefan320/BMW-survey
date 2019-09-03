@@ -1,0 +1,24 @@
+{
+  "name": "bmw-survey",
+  "version": "1.0.0",
+  "description": "BMW Survey",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "Stefan Cutajar",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "node-sass": "^4.12.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4"
+  }
+}
