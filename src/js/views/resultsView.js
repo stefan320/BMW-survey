@@ -60,8 +60,6 @@ export const chart = results => {
             return label;
           },
           afterLabel: function(tooltipItem, data) {
-            console.log(data);
-            console.log(tooltipItem);
             var percentage =
               (data["datasets"][0]["data"][tooltipItem["index"]] /
                 results.totalSubmits) *

@@ -82,10 +82,13 @@ export default class Survey {
     };
     arr.forEach((el, index) => {
       if (
-        el[0] == "m" ||
+        el[0].toUpperCase() === "M" ||
         (reg.test(el) && el.length === 3) ||
         el[el.length - 1] === "i"
       ) {
+        if (el[0] === "m") {
+          el = el.toUpperCase();
+        }
         cars.carList.push(el);
       } else {
         cars.invalidCars.push(el);
@@ -113,7 +116,6 @@ export default class Survey {
       curPercentage = (values[index] / total) * 100;
       percentages[el] = Math.round(curPercentage * 100) / 100;
     });
-    console.log(percentages);
     return percentages;
   }
 

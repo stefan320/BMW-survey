@@ -46,17 +46,16 @@ const initForm = () => {
   }
   if (state.survey.retriveData("targetsData")) {
     state.survey.results.targetsData = state.survey.retriveData("targetsData");
-    //Calculate and print the car average
   }
 
-  let carsAverage = state.survey.calcAverage(
+  state.carsAverage = state.survey.calcAverage(
     state.survey.results.targetsData.bmwsOwned,
     state.survey.results.groups.targets
   );
-  if (isNaN(carsAverage)) {
-    carsAverage = 0;
+  if (isNaN(state.carsAverage)) {
+    state.carsAverage = 0;
   }
-  elements.header.innerHTML = `On average survey partacipans owned ${carsAverage} cars.`;
+  elements.header.innerHTML = `On average survey partacipans owned ${state.carsAverage} cars`;
 
   //Init the charts
   state.chart();
@@ -125,7 +124,6 @@ state.stepTwo = () => {
     //Since the bonus question is skipped step is incremented by two
     elements.continue.onclick = state.stepFour;
   }
-  console.log(state);
 };
 
 //BONUS QUESTION only if partacipant is licensed between 18 & 25 years
@@ -185,7 +183,6 @@ state.stepFive = () => {
   var cars = state.survey.validateCar(state.partacipant.modelsDriven);
 
   if (cars.invalidCars.length > 0) {
-    console.log(cars);
     surveyView.printInvalidCars(cars.invalidCars, cars.invalidInputIndex);
   } else {
     state.survey.addTargetable(state.partacipant);
@@ -202,6 +199,14 @@ state.finishSurvey = msg => {
     state.survey.results.groups,
     state.survey.results.totalSubmits
   );
+  state.carsAverage = state.survey.calcAverage(
+    state.survey.results.targetsData.bmwsOwned,
+    state.survey.results.groups.targets
+  );
+  if (isNaN(state.carsAverage)) {
+    state.carsAverage = 0;
+  }
+  elements.header.innerHTML = `On average survey partacipans owned ${state.carsAverage} cars`;
 };
 
 state.chart = () => {

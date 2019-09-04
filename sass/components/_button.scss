@@ -3,6 +3,7 @@
   margin: 3rem auto;
   background-color: $color-secondary;
   border: none;
+  outline: $color-gray;
   padding: 1.2rem 3rem;
   transition: all 0.4s;
   border-radius: 8px;
@@ -10,9 +11,10 @@
   @include respond-tab {
     padding: 1.5rem 3.5rem;
   }
-  &:target,
+  &:focus,
   &:active {
     border: none;
+    outline: $color-gray;
   }
 
   &:hover {

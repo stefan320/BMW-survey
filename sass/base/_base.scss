@@ -19,3 +19,17 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* Change the white background on auto complete  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $color-primary inset !important;
+  color: $color-white;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: $color-white !important;
+}

@@ -32,4 +32,7 @@
       padding: 1.5rem 0;
     }
   }
+  & [name="bmw-models-driven"]:not(:last-child) {
+    margin-bottom: 1.4rem;
+  }
 }

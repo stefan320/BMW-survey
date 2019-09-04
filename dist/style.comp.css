@@ -3,6 +3,7 @@
   margin: 3rem auto;
   background-color: #e6e7e8;
   border: none;
+  outline: #58595b;
   padding: 1.2rem 3rem;
   transition: all 0.4s;
   border-radius: 8px;
@@ -10,8 +11,9 @@
   @media (min-width: 1000px) {
     .btn {
       padding: 1.5rem 3.5rem; } }
-  .btn:target, .btn:active {
-    border: none; }
+  .btn:focus, .btn:active {
+    border: none;
+    outline: #58595b; }
   .btn:hover {
     background-color: #135169; }
 
@@ -76,6 +78,18 @@ body {
   max-width: 1200px;
   margin: 0 auto; }
 
+/* Change the white background on auto complete  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #135169 inset !important;
+  color: #fefefe; }
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fefefe !important; }
+
 .header--secondary {
   font-size: 2.4rem;
   font-weight: 400;
@@ -128,6 +142,8 @@ body {
       .form__select option {
         width: 40%;
         padding: 1.5rem 0; } }
+  .form [name="bmw-models-driven"]:not(:last-child) {
+    margin-bottom: 1.4rem; }
 
 .results {
   font-size: 1.8rem;

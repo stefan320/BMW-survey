@@ -39,7 +39,7 @@ export const domStrings = {
             name="age"
             id="age"
             min="0"
-            max="100"
+            max="100" autofocus
           />
 
           <label class="form--label" for="gender">Gender</label>
@@ -51,21 +51,21 @@ export const domStrings = {
         </div>`,
   isLicenced: `<label class="form--label" for="licence">
     Do you own a car driving license?</label>
-  <select class="form__select" name="licence" id="licence">
+  <select class="form__select" name="licence" id="licence" autofocus>
     <option class="form__select--option" value="yes">Yes</option>
     <option class="form__select--option" value="no">No, I prefer using other transport</option>
   </select>`,
 
   isFirstCar: `     
   <label class="form--label" for="first-car">Is this your first car?</label>
-  <select class="form__select" name="first-car" id="first-car">
+  <select class="form__select" name="first-car" id="first-car" autofocus>
     <option class="form__select--option" value="yes">Yes</option>
     <option class="form__select--option" value="no">No</option>
   </select>`,
 
   targetableQuestions: `
   <label class="form--label" for="drive-train">Which drivetrain do you prefer?</label>
-    <select class="form__select" name="drive-train" id="drive-train">
+    <select class="form__select" name="drive-train" id="drive-train" autofocus>
       <option class="form__select--option" value="FWD">FWD</option>
       <option class="form__select--option" value="RWD">RWD</option>
       <option class="form__select--option" value="idk">I don't know</option>
@@ -81,5 +81,5 @@ export const domStrings = {
     <input class="form--input" type="number" name="bmws-driven" id="bmws-driven"  min="0"/>`,
 
   modelsDriven: `<label class="form--label" for="bmw-models-driven">Which BMW did you drive?</label>`,
-  modelsInput: `<input class="form--input" type="text" class="bmw-models-driven" name='bmw-models-driven' id="bmw-models-driven--number" />`
+  modelsInput: `<input class="form--input" type="text" class="bmw-models-driven" name='bmw-models-driven' id="bmw-models-driven--number" autofocus/>`
 };
