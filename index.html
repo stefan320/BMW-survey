@@ -13,6 +13,34 @@
     <title>BMW Survey</title>
   </head>
   <body>
+    <label class="results__input--label" for="results__input">&nbsp;</label>
+    <input type="checkbox" id="results__input" class="results__input" />
+
+    <div class="results__popup">
+      <div class="wrapper">
+        <div class="results">
+          <h3 class="results--titles">Results</h3>
+        </div>
+        <canvas class="chart" id="myChart" class="chart--pie"></canvas>
+
+        <div class="results">
+          <h3 class="results--titles">Targetables Percentages</h3>
+        </div>
+        <canvas class="chart" id="barChart"></canvas>
+
+        <div class="results">
+          <h3 class="results--titles">
+            Model distribution of all BMW models entered
+          </h3>
+        </div>
+        <canvas class="chart" id="horizontalChart"></canvas>
+
+        <div class="results">
+          <h3 class="results--titles" id="header"></h3>
+        </div>
+      </div>
+    </div>
+
     <header class="header">
       <img
         class="header--logo"
@@ -41,7 +69,9 @@
           </select>
         </div>
 
-        <button href="#" class="btn" id="continue">Continue &rarr;</button>
+        <button href="#" class="btn" type="submit" id="continue">
+          Continue &rarr;
+        </button>
 
         <!--
            <label class="form--label" for="licence"
@@ -93,55 +123,11 @@
         <label class="form--label" for="bmw-models-driven"
           >Which BMW did you drive?</label
         >
-        <input class="form--input" type="text" id="bmw-models-driven" /> 
-      
+        <input class="form--input" type="text" id="bmw-models-driven" />
       --></form>
       <div class="popup">
         <p class="popup--close">&times;</p>
         <h1 class="popup--msg">Thank you for your interest in helping BMW.</h1>
-      </div>
-      <!-- <div class="results">
-        <h3>Survey Results</h3>
-        <ul class="results__list">
-          <li class="results__list--item">
-            <span id="adolescents">0</span>&nbsp;adolescents participated in the
-            survey
-          </li>
-          <li class="results__list--item">
-            <span id="unlicensed">0</span>&nbsp;unlicensed participated in the
-            survey
-          </li>
-          <li class="results__list--item">
-            <span id="first-timers">0</span>&nbsp;first-timers participated in
-            the survey
-          </li>
-          <li class="results__list--item">
-            <span id="targetables">0</span>&nbsp;targetables participated in the
-            survey
-          </li>
-        </ul>
-      </div> -->
-      <div class="wrapper">
-        <div class="results results--first">
-          <h3 class="results--titles">Results</h3>
-        </div>
-        <canvas class="chart" id="myChart" class="chart--pie"></canvas>
-
-        <div class="results">
-          <h3 class="results--titles">Targetables Percentages</h3>
-        </div>
-        <canvas class="chart" id="barChart"></canvas>
-
-        <div class="results">
-          <h3 class="results--titles">
-            Model distribution of all BMW models entered
-          </h3>
-        </div>
-        <canvas class="chart" id="horizontalChart"></canvas>
-
-        <div class="results">
-          <h3 class="results--titles" id="header"></h3>
-        </div>
       </div>
     </main>
     <script src="dist/js/bundle.js"></script>

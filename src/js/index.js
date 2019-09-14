@@ -5,7 +5,7 @@ import * as resultsView from "./views/resultsView";
 
 /****Gobal State ***
  * Under 18
- * unlicensedsed
+ * unlicensed
  * First Timers
  * Targetable Clients
  *******************/
@@ -34,7 +34,7 @@ elements.continue.addEventListener("click", e => {
 });
 
 const initForm = () => {
-  console.log("app runinng ");
+  console.log("app runinng");
   if (!state.survey) {
     state.survey = new Survey();
   }
@@ -112,7 +112,7 @@ state.stepTwo = () => {
     state.survey.addPartacipant("unlicensed");
     state.finishSurvey(thankyouMsg.normal);
   } else if (
-    //if partacipant is licensed and age is 18 - 25 print the bonus question and run step Three
+    //if partacipant is licensed and age is 18 - 25 print the bonus question and run stepThree
     state.partacipant.licenced === "yes" &&
     state.partacipant.age <= 25
   ) {

@@ -11,6 +11,12 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin fixed {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @mixin respond-tab {
   @media (min-width: 1000px) {
     @content;

@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes scaleOut {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
 @keyframes slide {
   from {
     width: 0;

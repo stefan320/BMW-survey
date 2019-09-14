@@ -20,6 +20,37 @@
     padding: 3rem 0;
   }
 
+  &__input {
+    display: none;
+  }
+
+  &__input:checked ~ .results__popup {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &__input--label {
+    width: 3.5rem;
+    font-size: 3rem;
+    background: url("../logos/statistics.svg") no-repeat center;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  &__popup {
+    @include absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transform: scale(0);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
   &:last-child {
     margin: 1rem auto 0;
     @include respond-tab {
@@ -27,16 +58,6 @@
     }
     @include respond-desktop {
       margin: 4.5rem auto 0;
-    }
-  }
-
-  &--first {
-    margin: 0 auto 1rem;
-    @include respond-tab {
-      margin: 0 auto 2.5rem;
-    }
-    @include respond-desktop {
-      margin: 4.5rem auto;
     }
   }
 
