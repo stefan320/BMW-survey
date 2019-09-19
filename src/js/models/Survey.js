@@ -81,7 +81,11 @@ export default class Survey {
       invalidInputIndex: []
     };
     arr.forEach((el, index) => {
-      if (
+      //If input is empty
+      if (!el) {
+        cars.invalidCars.push(el);
+        cars.invalidInputIndex.push(index);
+      } else if (
         el[0].toUpperCase() === "M" ||
         (reg.test(el) && el.length === 3) ||
         el[el.length - 1] === "i"

@@ -85,11 +85,9 @@ state.stepOne = () => {
 
   //Validate the age
   if (!state.partacipant.age) {
+    const ageLabel = elements.form.namedItem("age").labels[0];
     // Alert user that the age is invalid
-    surveyView.printInvalidInput(
-      elements.form.namedItem("age"),
-      errors.invalidAge
-    );
+    surveyView.printInvalidInput(ageLabel, errors.invalidAge);
   } else if (state.partacipant.age < 18) {
     state.step++;
     // Save Survey as Under Aged partacipant
@@ -137,6 +135,8 @@ state.stepThree = () => {
   } else {
     //Print The Next set of Questions
     surveyView.printStep(domStrings.targetableQuestions);
+    state.modelsInputCtrl();
+
     elements.continue.onclick = state.stepFour;
   }
 };
@@ -149,12 +149,14 @@ state.stepFour = () => {
 
   // If partacipant drove 1 or more bmws
   if (state.partacipant.bmwsDriven > 0) {
-    // Prints the next question and dynamically add inputs according to how many bmws driven
-    surveyView.appendQuestion(
-      domStrings.modelsDriven,
+    // Prints the next question
+    surveyView.appendQuestion(domStrings.modelsDriven);
+    // Dynamically add inputs according to how many bmws driven
+    surveyView.appendInputs(
       state.partacipant.bmwsDriven,
       domStrings.modelsInput
     );
+    state.modelsInputCtrl();
     elements.continue.onclick = state.stepFive;
   } else {
     // Save Results inside targetables object
@@ -165,6 +167,16 @@ state.stepFour = () => {
 };
 
 state.stepFive = () => {
+  if (
+    state.partacipant.bmwsDriven != elements.form.namedItem("bmws-driven").value
+  ) {
+    console.log("changed");
+    surveyView.appendInputs(
+      elements.form.namedItem("bmws-driven").value -
+        state.partacipant.bmwsDriven,
+      domStrings.modelsInput
+    );
+  }
   state.partacipant.modelsDriven = [];
 
   // push the models driven to the array
@@ -190,6 +202,55 @@ state.stepFive = () => {
     state.finishSurvey(thankyouMsg.completed);
   }
 };
+
+/*********************
+ * ****************
+ * Testing
+ * ****************
+ *********************/
+
+state.modelsInputCtrl = () => {
+  const bmwsDriven = elements.form.namedItem("bmws-driven");
+  let oldVal = parseInt(bmwsDriven.value);
+  let newVal, difference;
+
+  bmwsDriven.addEventListener("change", () => {
+    newVal = parseInt(bmwsDriven.value);
+
+    //If the new value is smaller than the old one
+    if (newVal < oldVal) {
+      console.log("pass");
+      difference = oldVal - newVal;
+      //Remove extra inputs
+      surveyView.removeElements(difference);
+
+      //Remove label if no more inputs
+      if (newVal === 0) {
+        surveyView.removeElements(1);
+      }
+
+      oldVal = newVal;
+    } else {
+      //Add inputs
+      difference = newVal - oldVal;
+      if (oldVal === 0) {
+        surveyView.appendQuestion(domStrings.modelsDriven);
+      }
+      console.log("pass");
+      surveyView.appendInputs(difference, domStrings.modelsInput, oldVal);
+      oldVal = newVal;
+    }
+
+    state.partacipant.bmwsDriven = elements.form.namedItem("bmws-driven").value;
+  });
+  elements.continue.onclick = state.stepFive;
+};
+
+/*********************
+ * ****************
+ * Testing
+ * ****************
+ *********************/
 
 state.finishSurvey = msg => {
   // Show Thank you message

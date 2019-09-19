@@ -1,9 +1,11 @@
-import { elements } from "./base";
+import { elements, domStrings } from "./base";
 
 // Show invalid message in placeholder
 export const printInvalidInput = (el, err) => {
-  el.value = "";
-  el.placeholder = err;
+  if (!el.classList.contains("danger")) {
+    el.classList.add("danger");
+    el.textContent = err;
+  }
 };
 
 // Change the placeholder message of the invalid cars
@@ -39,12 +41,20 @@ export const printStep = step => {
 
 //append question
 //replace 'number' to index so every input will have an id
-export const appendQuestion = (question, ammount, input) => {
+export const appendQuestion = question =>
   elements.formState.insertAdjacentHTML("beforeend", question);
-  for (let i = 0; i < ammount; i++) {
+
+export const appendInputs = (ammount, input, start = 0) => {
+  for (let i = start; i < start + ammount; i++) {
     elements.formState.insertAdjacentHTML(
       "beforeend",
       input.replace("number", i)
     );
+  }
+};
+
+export const removeElements = total => {
+  for (let i = 0; i < total; i++) {
+    elements.formState.lastChild.remove();
   }
 };

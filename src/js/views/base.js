@@ -31,7 +31,6 @@ export const thankyouMsg = {
 
 export const domStrings = {
   start: `<div class="form__state">
-          <h1 class="form--alert d-none"></h1>
           <label class="form--label" for="age">Age</label>
           <input
             class="form--input"
@@ -49,18 +48,19 @@ export const domStrings = {
             <option class="form__select--option" value="other">Other</option>
           </select>
         </div>`,
+
+  isFirstCar: `     
+    <label class="form--label" for="first-car">Is this your first car?</label>
+    <select class="form__select" name="first-car" id="first-car" autofocus>
+      <option class="form__select--option" value="yes">Yes</option>
+      <option class="form__select--option" value="no">No</option>
+    </select>`,
+
   isLicenced: `<label class="form--label" for="licence">
     Do you own a car driving license?</label>
   <select class="form__select" name="licence" id="licence" autofocus>
     <option class="form__select--option" value="yes">Yes</option>
     <option class="form__select--option" value="no">No, I prefer using other transport</option>
-  </select>`,
-
-  isFirstCar: `     
-  <label class="form--label" for="first-car">Is this your first car?</label>
-  <select class="form__select" name="first-car" id="first-car" autofocus>
-    <option class="form__select--option" value="yes">Yes</option>
-    <option class="form__select--option" value="no">No</option>
   </select>`,
 
   targetableQuestions: `
@@ -81,5 +81,5 @@ export const domStrings = {
     <input class="form--input" type="number" name="bmws-driven" id="bmws-driven"  min="0"/>`,
 
   modelsDriven: `<label class="form--label" for="bmw-models-driven">Which BMW did you drive?</label>`,
-  modelsInput: `<input class="form--input" type="text" class="bmw-models-driven" name='bmw-models-driven' id="bmw-models-driven--number" autofocus/>`
+  modelsInput: `<input class="form--input" type="text" class="bmw-models-driven" name='bmw-models-driven' id="bmw-models-driven--number" >`
 };

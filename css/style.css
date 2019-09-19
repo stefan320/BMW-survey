@@ -101,6 +101,10 @@ input:-webkit-autofill {
   font-weight: 400;
   color: #58595b; }
 
+.danger {
+  color: #e7222e;
+  font-weight: 700; }
+
 .d-none {
   display: none; }
 
