@@ -102,8 +102,10 @@ input:-webkit-autofill {
   color: #58595b; }
 
 .danger {
-  color: #e7222e;
-  font-weight: 700; }
+  background-color: #ce4850f5;
+  display: inline-block !important;
+  padding: 0.4rem 2rem !important;
+  margin: 1rem 0; }
 
 .d-none {
   display: none; }
@@ -174,6 +176,8 @@ input:-webkit-autofill {
       font-size: 2.2rem;
       font-weight: 700;
       padding: 3rem 0; } }
+  .results--first {
+    margin-top: 0 !important; }
   .results__input {
     display: none; }
   .results__input:checked ~ .results__popup {

@@ -13,7 +13,9 @@ export const printInvalidCars = (invalidCars, input) => {
   invalidCars.forEach((el, index) => {
     elements.form.namedItem(
       `bmw-models-driven--${input[index]}`
-    ).placeholder = `${el} is not a valid car`;
+    ).placeholder = el
+      ? `${el} is not a valid car`
+      : `Please fill in the field or change the number of cars driven`;
     elements.form.namedItem(`bmw-models-driven--${input[index]}`).value = "";
   });
 };

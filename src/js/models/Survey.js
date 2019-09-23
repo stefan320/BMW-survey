@@ -88,7 +88,8 @@ export default class Survey {
       } else if (
         el[0].toUpperCase() === "M" ||
         (reg.test(el) && el.length === 3) ||
-        el[el.length - 1] === "i"
+        el[el.length - 1] === "i" ||
+        el[el.length - 1] === "d"
       ) {
         if (el[0] === "m") {
           el = el.toUpperCase();

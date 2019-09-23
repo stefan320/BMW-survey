@@ -5,6 +5,8 @@
 }
 
 .danger {
-  color: $badge-color-tertiary;
-  font-weight: 700;
+  background-color: $badge-color-tertiary;
+  display: inline-block !important;
+  padding: 0.4rem 2rem !important;
+  margin: 1rem 0;
 }

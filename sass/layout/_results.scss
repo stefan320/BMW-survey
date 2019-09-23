@@ -20,6 +20,10 @@
     padding: 3rem 0;
   }
 
+  &--first {
+    margin-top: 0 !important;
+  }
+
   &__input {
     display: none;
   }
